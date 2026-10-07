@@ -44,7 +44,10 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc -p tsconfig.build.json",
+    "build": "vite build --mode app",
+    "build:app": "vite build --mode app",
+    "build:lib": "vite build --mode lib && tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build:lib",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
