@@ -63,6 +63,14 @@
     "cinematic",
     "aura-ui"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RitikWeb22/aura-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RitikWeb22/aura-ui/issues"
+  },
+  "homepage": "https://github.com/RitikWeb22/aura-ui#readme",
   "author": "Aura UI Team",
   "license": "MIT",
   "peerDependencies": {
