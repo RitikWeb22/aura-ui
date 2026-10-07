@@ -1,0 +1,263 @@
+/**
+ * Aura UI Design Tokens
+ * Zero-dependency CSS Custom Properties
+ */
+
+:root {
+  /* Font Families */
+  --aura-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", sans-serif;
+  --aura-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Typography Scale */
+  --aura-text-xs: 0.75rem;     /* 12px */
+  --aura-text-sm: 0.875rem;    /* 14px */
+  --aura-text-base: 1rem;      /* 16px */
+  --aura-text-lg: 1.125rem;    /* 18px */
+  --aura-text-xl: 1.25rem;     /* 20px */
+  --aura-text-2xl: 1.5rem;     /* 24px */
+  --aura-text-3xl: 1.875rem;   /* 30px */
+  --aura-text-4xl: 2.25rem;    /* 36px */
+  --aura-text-5xl: 3rem;       /* 48px */
+  --aura-text-6xl: 3.75rem;    /* 60px */
+
+  /* Line Heights */
+  --aura-leading-tight: 1.2;
+  --aura-leading-snug: 1.35;
+  --aura-leading-normal: 1.5;
+  --aura-leading-relaxed: 1.625;
+
+  /* Font Weights */
+  --aura-weight-regular: 400;
+  --aura-weight-medium: 500;
+  --aura-weight-semibold: 600;
+  --aura-weight-bold: 700;
+
+  /* Spacing Scale */
+  --aura-space-0: 0px;
+  --aura-space-1: 0.25rem;  /* 4px */
+  --aura-space-2: 0.5rem;   /* 8px */
+  --aura-space-3: 0.75rem;  /* 12px */
+  --aura-space-4: 1rem;     /* 16px */
+  --aura-space-5: 1.25rem;  /* 20px */
+  --aura-space-6: 1.5rem;   /* 24px */
+  --aura-space-8: 2rem;     /* 32px */
+  --aura-space-10: 2.5rem;  /* 40px */
+  --aura-space-12: 3rem;    /* 48px */
+  --aura-space-16: 4rem;    /* 64px */
+  --aura-space-20: 5rem;    /* 80px */
+  --aura-space-24: 6rem;    /* 96px */
+
+  /* Radii */
+  --aura-radius-xs: 4px;
+  --aura-radius-sm: 8px;
+  --aura-radius-md: 14px;
+  --aura-radius-lg: 20px;
+  --aura-radius-xl: 28px;
+  --aura-radius-full: 9999px;
+
+  /* Transitions & Motion */
+  --aura-duration-instant: 75ms;
+  --aura-duration-fast: 150ms;
+  --aura-duration-normal: 240ms;
+  --aura-duration-slow: 400ms;
+  --aura-duration-slower: 600ms;
+
+  --aura-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --aura-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --aura-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --aura-ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  /* Z-Index Hierarchy */
+  --aura-z-normal: 1;
+  --aura-z-dropdown: 1000;
+  --aura-z-sticky: 1100;
+  --aura-z-fixed: 1200;
+  --aura-z-modal-backdrop: 1300;
+  --aura-z-modal: 1400;
+  --aura-z-popover: 1500;
+  --aura-z-tooltip: 1600;
+  --aura-z-toast: 1700;
+
+  /* Default / Dark Theme Colors (Quiet Luxury / Cinematic Dark) */
+  --aura-bg: #090a0f;
+  --aura-bg-subtle: #12131a;
+  --aura-surface: #171822;
+  --aura-surface-raised: #1f202d;
+  --aura-surface-hover: #262838;
+  --aura-surface-active: #2e3043;
+  --aura-fg: #f4f5f8;
+  --aura-fg-muted: #9ba1b0;
+  --aura-fg-subtle: #686e80;
+
+  --aura-border: rgba(255, 255, 255, 0.1);
+  --aura-border-subtle: rgba(255, 255, 255, 0.05);
+  --aura-border-strong: rgba(255, 255, 255, 0.18);
+
+  --aura-card-bg: rgba(23, 24, 34, 0.75);
+  --aura-card-border: rgba(255, 255, 255, 0.09);
+
+  --aura-accent: #6366f1;
+  --aura-accent-fg: #ffffff;
+  --aura-accent-hover: #4f46e5;
+  --aura-accent-subtle: rgba(99, 102, 241, 0.15);
+  --aura-accent-glow: rgba(99, 102, 241, 0.35);
+
+  --aura-destructive: #f43f5e;
+  --aura-destructive-fg: #ffffff;
+  --aura-destructive-subtle: rgba(244, 63, 94, 0.15);
+
+  --aura-success: #10b981;
+  --aura-success-fg: #ffffff;
+  --aura-success-subtle: rgba(16, 185, 129, 0.15);
+
+  --aura-warning: #f59e0b;
+  --aura-warning-fg: #ffffff;
+  --aura-warning-subtle: rgba(245, 158, 11, 0.15);
+
+  --aura-info: #06b6d4;
+  --aura-info-fg: #ffffff;
+  --aura-info-subtle: rgba(6, 182, 212, 0.15);
+
+  /* Shadows */
+  --aura-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --aura-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --aura-shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+  --aura-shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.55);
+  --aura-shadow-glow: 0 0 24px -2px var(--aura-accent-glow);
+
+  /* Glassmorphism */
+  --aura-glass-bg: rgba(18, 19, 26, 0.65);
+  --aura-glass-border: rgba(255, 255, 255, 0.12);
+  --aura-glass-blur: blur(16px);
+
+  /* Focus ring */
+  --aura-focus-ring: 0 0 0 2px var(--aura-bg), 0 0 0 4px var(--aura-accent);
+}
+
+/* Light Theme (Quiet Luxury / Editorial Light) */
+[data-aura-theme="light"],
+.aura-theme-light {
+  --aura-bg: #f8fafc;
+  --aura-bg-subtle: #edf2f7;
+  --aura-surface: #ffffff;
+  --aura-surface-raised: #f1f5f9;
+  --aura-surface-hover: #e2e8f0;
+  --aura-surface-active: #cbd5e1;
+  --aura-fg: #090d16;
+  --aura-fg-muted: #475569;
+  --aura-fg-subtle: #64748b;
+
+  --aura-border: rgba(15, 23, 42, 0.12);
+  --aura-border-subtle: rgba(15, 23, 42, 0.06);
+  --aura-border-strong: rgba(15, 23, 42, 0.22);
+
+  --aura-card-bg: #ffffff;
+  --aura-card-border: rgba(15, 23, 42, 0.1);
+
+  --aura-accent: #6366f1;
+  --aura-accent-fg: #ffffff;
+  --aura-accent-hover: #4f46e5;
+  --aura-accent-subtle: rgba(99, 102, 241, 0.12);
+  --aura-accent-glow: rgba(99, 102, 241, 0.24);
+
+  --aura-destructive: #e11d48;
+  --aura-destructive-fg: #ffffff;
+  --aura-destructive-subtle: rgba(225, 29, 72, 0.1);
+
+  --aura-success: #059669;
+  --aura-success-fg: #ffffff;
+  --aura-success-subtle: rgba(5, 150, 105, 0.1);
+
+  --aura-warning: #d97706;
+  --aura-warning-fg: #ffffff;
+  --aura-warning-subtle: rgba(217, 119, 6, 0.1);
+
+  --aura-info: #0284c7;
+  --aura-info-fg: #ffffff;
+  --aura-info-subtle: rgba(2, 132, 199, 0.1);
+
+  --aura-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --aura-shadow-sm: 0 2px 6px -1px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+  --aura-shadow-md: 0 10px 25px -4px rgba(15, 23, 42, 0.1), 0 4px 10px -2px rgba(15, 23, 42, 0.05);
+  --aura-shadow-lg: 0 20px 40px -6px rgba(15, 23, 42, 0.14), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+  --aura-shadow-glow: 0 0 24px -2px var(--aura-accent-glow);
+
+  --aura-glass-bg: rgba(255, 255, 255, 0.88);
+  --aura-glass-border: rgba(15, 23, 42, 0.12);
+
+  --aura-focus-ring: 0 0 0 2px var(--aura-bg), 0 0 0 4px var(--aura-accent);
+}
+
+/* Explicit Dark Theme */
+[data-aura-theme="dark"],
+.aura-theme-dark {
+  --aura-bg: #090a0f;
+  --aura-bg-subtle: #12131a;
+  --aura-surface: #171822;
+  --aura-surface-raised: #1f202d;
+  --aura-surface-hover: #262838;
+  --aura-surface-active: #2e3043;
+  --aura-fg: #f4f5f8;
+  --aura-fg-muted: #9ba1b0;
+  --aura-fg-subtle: #686e80;
+
+  --aura-border: rgba(255, 255, 255, 0.1);
+  --aura-border-subtle: rgba(255, 255, 255, 0.05);
+  --aura-border-strong: rgba(255, 255, 255, 0.18);
+
+  --aura-card-bg: rgba(23, 24, 34, 0.75);
+  --aura-card-border: rgba(255, 255, 255, 0.09);
+
+  --aura-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --aura-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --aura-shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+  --aura-shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.55);
+  --aura-glass-bg: rgba(18, 19, 26, 0.65);
+  --aura-glass-border: rgba(255, 255, 255, 0.12);
+}
+
+/* System Theme via media query */
+@media (prefers-color-scheme: light) {
+  [data-aura-theme="system"] {
+    --aura-bg: #f8fafc;
+    --aura-bg-subtle: #edf2f7;
+    --aura-surface: #ffffff;
+    --aura-surface-raised: #f1f5f9;
+    --aura-surface-hover: #e2e8f0;
+    --aura-surface-active: #cbd5e1;
+    --aura-fg: #090d16;
+    --aura-fg-muted: #475569;
+    --aura-fg-subtle: #64748b;
+    --aura-border: rgba(15, 23, 42, 0.12);
+    --aura-border-subtle: rgba(15, 23, 42, 0.06);
+    --aura-border-strong: rgba(15, 23, 42, 0.22);
+    --aura-card-bg: #ffffff;
+    --aura-card-border: rgba(15, 23, 42, 0.1);
+    --aura-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --aura-shadow-sm: 0 2px 6px -1px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+    --aura-shadow-md: 0 10px 25px -4px rgba(15, 23, 42, 0.1), 0 4px 10px -2px rgba(15, 23, 42, 0.05);
+    --aura-shadow-lg: 0 20px 40px -6px rgba(15, 23, 42, 0.14), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+    --aura-glass-bg: rgba(255, 255, 255, 0.88);
+    --aura-glass-border: rgba(15, 23, 42, 0.12);
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --aura-duration-instant: 0ms !important;
+    --aura-duration-fast: 0ms !important;
+    --aura-duration-normal: 0ms !important;
+    --aura-duration-slow: 0ms !important;
+    --aura-duration-slower: 0ms !important;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

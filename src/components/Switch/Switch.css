@@ -1,0 +1,111 @@
+.aura-switch-container {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--aura-space-3);
+  user-select: none;
+}
+
+.aura-switch-container--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aura-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  background-color: var(--aura-surface-hover);
+  border: 1px solid var(--aura-border-strong);
+  border-radius: var(--aura-radius-full);
+  cursor: pointer;
+  outline: none;
+  transition: 
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    border-color var(--aura-duration-fast) var(--aura-ease-out),
+    box-shadow var(--aura-duration-fast) var(--aura-ease-out);
+  flex-shrink: 0;
+}
+
+.aura-switch:focus-visible {
+  box-shadow: var(--aura-focus-ring);
+}
+
+.aura-switch--sm {
+  width: 34px;
+  height: 20px;
+}
+
+.aura-switch--md {
+  width: 44px;
+  height: 24px;
+}
+
+.aura-switch--lg {
+  width: 52px;
+  height: 28px;
+}
+
+.aura-switch__thumb {
+  display: block;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform var(--aura-duration-normal) var(--aura-ease-spring);
+  pointer-events: none;
+}
+
+.aura-switch--sm .aura-switch__thumb {
+  width: 14px;
+  height: 14px;
+  transform: translateX(0);
+}
+
+.aura-switch--sm.aura-switch--checked .aura-switch__thumb {
+  transform: translateX(14px);
+}
+
+.aura-switch--md .aura-switch__thumb {
+  width: 18px;
+  height: 18px;
+  transform: translateX(0);
+}
+
+.aura-switch--md.aura-switch--checked .aura-switch__thumb {
+  transform: translateX(20px);
+}
+
+.aura-switch--lg .aura-switch__thumb {
+  width: 22px;
+  height: 22px;
+  transform: translateX(0);
+}
+
+.aura-switch--lg.aura-switch--checked .aura-switch__thumb {
+  transform: translateX(24px);
+}
+
+.aura-switch--checked {
+  background-color: var(--aura-accent);
+  border-color: var(--aura-accent);
+}
+
+.aura-switch-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.aura-switch-label {
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+  color: var(--aura-fg);
+  line-height: var(--aura-leading-snug);
+}
+
+.aura-switch-description {
+  font-size: var(--aura-text-xs);
+  color: var(--aura-fg-muted);
+  line-height: var(--aura-leading-normal);
+}

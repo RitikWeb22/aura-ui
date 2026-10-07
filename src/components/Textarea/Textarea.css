@@ -1,0 +1,47 @@
+.aura-textarea {
+  width: 100%;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-sm);
+  color: var(--aura-fg);
+  background-color: var(--aura-surface-raised);
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius-md);
+  padding: var(--aura-space-3) var(--aura-space-4);
+  line-height: var(--aura-leading-relaxed);
+  outline: none;
+  box-sizing: border-box;
+  transition: 
+    border-color var(--aura-duration-fast) var(--aura-ease-out),
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    box-shadow var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-textarea::placeholder {
+  color: var(--aura-fg-subtle);
+  opacity: 1;
+}
+
+.aura-textarea:focus {
+  border-color: var(--aura-accent);
+  box-shadow: 0 0 0 3px var(--aura-accent-subtle);
+}
+
+.aura-textarea--resize-none { resize: none; }
+.aura-textarea--resize-vertical { resize: vertical; }
+.aura-textarea--resize-horizontal { resize: horizontal; }
+.aura-textarea--resize-both { resize: both; }
+
+.aura-textarea--invalid {
+  border-color: var(--aura-destructive) !important;
+}
+
+.aura-textarea--invalid:focus {
+  box-shadow: 0 0 0 3px var(--aura-destructive-subtle) !important;
+}
+
+.aura-textarea--disabled,
+.aura-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--aura-bg-subtle);
+}

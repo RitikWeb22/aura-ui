@@ -1,0 +1,24 @@
+.aura-tilt-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--aura-radius-xl);
+  background-color: var(--aura-surface);
+  border: 1px solid var(--aura-border);
+  box-shadow: var(--aura-shadow-md);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.aura-tilt-card__glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.2s ease-out;
+}
+
+.aura-tilt-card__content {
+  position: relative;
+  z-index: 1;
+}

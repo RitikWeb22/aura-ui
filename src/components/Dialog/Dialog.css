@@ -1,0 +1,102 @@
+.aura-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--aura-z-modal-backdrop);
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--aura-space-4);
+  animation: aura-fade-in var(--aura-duration-normal) var(--aura-ease-out);
+}
+
+.aura-dialog {
+  position: relative;
+  width: 100%;
+  background-color: var(--aura-surface);
+  border: 1px solid var(--aura-border-strong);
+  border-radius: var(--aura-radius-xl);
+  box-shadow: var(--aura-shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: aura-scale-in var(--aura-duration-normal) var(--aura-ease-out);
+  max-height: calc(100vh - 4rem);
+}
+
+.aura-dialog--sm { max-width: 420px; }
+.aura-dialog--md { max-width: 540px; }
+.aura-dialog--lg { max-width: 720px; }
+.aura-dialog--xl { max-width: 900px; }
+.aura-dialog--full { max-width: calc(100% - 2rem); }
+
+.aura-dialog__close {
+  position: absolute;
+  top: var(--aura-space-4);
+  right: var(--aura-space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--aura-radius-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--aura-fg-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: 
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    color var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-dialog__close:hover {
+  background-color: var(--aura-surface-hover);
+  color: var(--aura-fg);
+}
+
+.aura-dialog__close:focus-visible {
+  box-shadow: var(--aura-focus-ring);
+}
+
+.aura-dialog__header {
+  padding: var(--aura-space-6) var(--aura-space-6) var(--aura-space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-1);
+}
+
+.aura-dialog__title {
+  margin: 0;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-xl);
+  font-weight: var(--aura-weight-semibold);
+  letter-spacing: -0.02em;
+  color: var(--aura-fg);
+}
+
+.aura-dialog__description {
+  margin: 0;
+  font-size: var(--aura-text-sm);
+  color: var(--aura-fg-muted);
+  line-height: var(--aura-leading-normal);
+}
+
+.aura-dialog__body {
+  padding: var(--aura-space-4) var(--aura-space-6);
+  color: var(--aura-fg);
+  overflow-y: auto;
+}
+
+.aura-dialog__footer {
+  padding: var(--aura-space-4) var(--aura-space-6) var(--aura-space-6);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--aura-space-3);
+  border-top: 1px solid var(--aura-border-subtle);
+  background-color: var(--aura-bg-subtle);
+  margin-top: auto;
+}

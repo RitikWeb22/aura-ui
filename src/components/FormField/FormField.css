@@ -1,0 +1,23 @@
+.aura-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-2);
+  width: 100%;
+}
+
+.aura-form-field__control {
+  width: 100%;
+}
+
+.aura-form-field__error {
+  font-size: var(--aura-text-xs);
+  color: var(--aura-destructive);
+  font-weight: var(--aura-weight-medium);
+  line-height: var(--aura-leading-snug);
+}
+
+.aura-form-field__helper {
+  font-size: var(--aura-text-xs);
+  color: var(--aura-fg-muted);
+  line-height: var(--aura-leading-snug);
+}

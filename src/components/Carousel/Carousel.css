@@ -1,0 +1,327 @@
+.aura-carousel {
+  position: relative;
+  width: 100%;
+  border-radius: var(--aura-radius-xl);
+  overflow: hidden;
+  background-color: var(--aura-surface);
+  border: 1px solid var(--aura-border);
+  box-shadow: var(--aura-shadow-md);
+  user-select: none;
+  outline: none;
+}
+
+.aura-carousel:focus-visible {
+  box-shadow: var(--aura-focus-ring);
+}
+
+.aura-carousel__viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--aura-carousel-aspect, 16 / 9);
+  overflow: hidden;
+}
+
+.aura-carousel__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--aura-duration-normal) var(--aura-ease-out);
+}
+
+/* Variant 1: Smooth Slide */
+.aura-carousel--slide .aura-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Variant 2: Cinematic Crossfade */
+.aura-carousel--fade .aura-carousel__track {
+  display: block;
+  position: relative;
+}
+
+.aura-carousel--fade .aura-carousel__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--aura-duration-slow) var(--aura-ease-out), transform var(--aura-duration-slow) var(--aura-ease-out);
+  transform: scale(0.98);
+}
+
+.aura-carousel--fade .aura-carousel__slide--active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+/* Variant 3: 3D Elevated Perspective Card */
+.aura-carousel--card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+.aura-carousel--card .aura-carousel__viewport {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  position: relative;
+  min-height: 380px;
+  padding: 1rem 0;
+}
+
+.aura-carousel--card .aura-carousel__track {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.aura-carousel--card .aura-carousel__slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 74%;
+  max-width: 580px;
+  height: 92%;
+  border-radius: var(--aura-radius-xl);
+  overflow: hidden;
+  background: var(--aura-surface-raised);
+  border: 1px solid var(--aura-border);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
+  transition: 
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.4s ease;
+  will-change: transform, opacity;
+  box-sizing: border-box;
+}
+
+.aura-carousel--card .aura-carousel__slide--active {
+  border-color: var(--aura-border-strong);
+  box-shadow: 
+    0 24px 52px -12px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+  filter: brightness(1);
+}
+
+.aura-carousel--card .aura-carousel__slide--side {
+  filter: brightness(0.75);
+}
+
+.aura-carousel--card .aura-carousel__slide--side:hover {
+  filter: brightness(0.92);
+  border-color: var(--aura-border-strong);
+}
+
+@media (max-width: 640px) {
+  .aura-carousel--card .aura-carousel__slide {
+    width: 86%;
+    height: 94%;
+  }
+}
+
+.aura-carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aura-carousel__slide--active:hover .aura-carousel__image {
+  transform: scale(1.035);
+}
+
+/* Gradient Overlay & Captions */
+.aura-carousel__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 2rem 1.75rem;
+  background: linear-gradient(0deg, rgba(7, 8, 12, 0.92) 0%, rgba(7, 8, 12, 0.5) 55%, transparent 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.aura-carousel__badge {
+  align-self: flex-start;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--aura-radius-full);
+  background-color: var(--aura-accent);
+  color: var(--aura-accent-fg);
+  margin-bottom: 0.25rem;
+}
+
+.aura-carousel__title {
+  margin: 0;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-xl);
+  font-weight: var(--aura-weight-bold);
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.aura-carousel__description {
+  margin: 0;
+  font-size: var(--aura-text-sm);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: var(--aura-leading-normal);
+  max-width: 600px;
+}
+
+/* Arrows Navigation */
+.aura-carousel__arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.aura-carousel__arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--aura-radius-full);
+  background: var(--aura-glass-bg);
+  backdrop-filter: var(--aura-glass-blur);
+  -webkit-backdrop-filter: var(--aura-glass-blur);
+  border: 1px solid var(--aura-glass-border);
+  color: var(--aura-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: var(--aura-shadow-sm);
+  transition: 
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    transform var(--aura-duration-instant) var(--aura-ease-out),
+    color var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-carousel__arrow:hover {
+  background-color: var(--aura-surface);
+  transform: scale(1.08);
+}
+
+.aura-carousel__arrow:active {
+  transform: scale(0.95);
+}
+
+/* Indicators / Dots */
+.aura-carousel__indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 3;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--aura-radius-full);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.aura-carousel__indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--aura-radius-full);
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: 
+    width var(--aura-duration-fast) var(--aura-ease-spring),
+    background-color var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-carousel__indicator:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.aura-carousel__indicator--active {
+  width: 22px;
+  background-color: #ffffff;
+}
+
+/* Slide Counter */
+.aura-carousel__counter {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--aura-radius-full);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-family: var(--aura-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 3;
+}
+
+.aura-carousel__counter-sep {
+  opacity: 0.5;
+}
+
+/* Card Variant Controls Specific */
+.aura-carousel--card .aura-carousel__arrows {
+  padding: 0 0.25rem;
+  z-index: 30;
+}
+
+.aura-carousel--card .aura-carousel__arrow {
+  width: 44px;
+  height: 44px;
+  background: var(--aura-surface-raised);
+  border: 1px solid var(--aura-border-strong);
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.5);
+  color: var(--aura-fg);
+}
+
+.aura-carousel--card .aura-carousel__arrow:hover {
+  background: var(--aura-accent);
+  color: #ffffff;
+  border-color: var(--aura-accent);
+  transform: scale(1.12);
+}
+
+.aura-carousel--card .aura-carousel__indicators {
+  bottom: 0.5rem;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.4rem 0.8rem;
+}

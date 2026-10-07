@@ -1,0 +1,161 @@
+.aura-pricing-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--aura-radius-xl);
+  border: 1px solid var(--aura-border);
+  background-color: var(--aura-surface);
+  padding: var(--aura-space-8);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--aura-shadow-sm);
+  transition: 
+    border-color var(--aura-duration-fast) var(--aura-ease-out),
+    box-shadow var(--aura-duration-fast) var(--aura-ease-out),
+    transform var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--aura-shadow-md);
+}
+
+/* Variant 1: Default Surface */
+.aura-pricing-card--default {
+  background-color: var(--aura-surface);
+  border-color: var(--aura-border);
+}
+
+/* Variant 2: Frosted Glass */
+.aura-pricing-card--glass {
+  background-color: var(--aura-glass-bg);
+  backdrop-filter: var(--aura-glass-blur);
+  -webkit-backdrop-filter: var(--aura-glass-blur);
+  border-color: var(--aura-glass-border);
+  box-shadow: var(--aura-shadow-md);
+}
+
+/* Variant 3: Cinematic Gradient Border & Glow */
+.aura-pricing-card--gradient {
+  background-color: var(--aura-surface);
+  border-color: var(--aura-accent);
+  box-shadow: 0 10px 30px -10px var(--aura-accent-glow), 0 0 0 1px var(--aura-accent);
+}
+
+.aura-pricing-card--gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ec4899, var(--aura-accent), #06b6d4);
+}
+
+/* Variant 4: Clean Minimal Editorial */
+.aura-pricing-card--minimal {
+  background-color: var(--aura-bg-subtle);
+  border-color: var(--aura-border-subtle);
+  box-shadow: none;
+}
+
+.aura-pricing-card--minimal:hover {
+  border-color: var(--aura-border);
+  box-shadow: var(--aura-shadow-xs);
+}
+
+/* Featured Modifier */
+.aura-pricing-card--featured {
+  border-color: var(--aura-accent);
+  box-shadow: 0 12px 35px -8px var(--aura-accent-glow);
+}
+
+.aura-pricing-card__glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--aura-accent), transparent);
+}
+
+.aura-pricing-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-2);
+}
+
+.aura-pricing-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aura-pricing-card__name {
+  margin: 0;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-xl);
+  font-weight: var(--aura-weight-bold);
+  letter-spacing: -0.02em;
+  color: var(--aura-fg);
+}
+
+.aura-pricing-card__description {
+  margin: 0;
+  font-size: var(--aura-text-sm);
+  color: var(--aura-fg-muted);
+  line-height: var(--aura-leading-normal);
+}
+
+.aura-pricing-card__price-section {
+  display: flex;
+  align-items: baseline;
+  gap: var(--aura-space-2);
+  margin: var(--aura-space-6) 0;
+}
+
+.aura-pricing-card__price {
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-4xl);
+  font-weight: var(--aura-weight-bold);
+  letter-spacing: -0.03em;
+  color: var(--aura-fg);
+}
+
+.aura-pricing-card__period {
+  font-size: var(--aura-text-sm);
+  color: var(--aura-fg-muted);
+}
+
+.aura-pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--aura-space-8) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-3);
+  flex-grow: 1;
+}
+
+.aura-pricing-card__feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-3);
+  font-size: var(--aura-text-sm);
+  color: var(--aura-fg);
+}
+
+.aura-pricing-card__check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--aura-radius-full);
+  background-color: var(--aura-success-subtle);
+  color: var(--aura-success);
+  flex-shrink: 0;
+}
+
+.aura-pricing-card__cta {
+  margin-top: auto;
+}

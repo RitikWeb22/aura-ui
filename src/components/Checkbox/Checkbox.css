@@ -1,0 +1,88 @@
+.aura-checkbox-container {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--aura-space-3);
+  cursor: pointer;
+  user-select: none;
+}
+
+.aura-checkbox-container--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aura-checkbox-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.aura-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.aura-checkbox-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--aura-radius-xs);
+  border: 1.5px solid var(--aura-border-strong);
+  background-color: var(--aura-surface-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    border-color var(--aura-duration-fast) var(--aura-ease-out),
+    box-shadow var(--aura-duration-fast) var(--aura-ease-out),
+    transform var(--aura-duration-instant) var(--aura-ease-out);
+}
+
+.aura-checkbox-input:focus-visible + .aura-checkbox-indicator {
+  box-shadow: var(--aura-focus-ring);
+}
+
+.aura-checkbox-input:checked + .aura-checkbox-indicator,
+.aura-checkbox-input:indeterminate + .aura-checkbox-indicator {
+  background-color: var(--aura-accent);
+  border-color: var(--aura-accent);
+  color: var(--aura-accent-fg);
+}
+
+.aura-checkbox-icon {
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity var(--aura-duration-fast) var(--aura-ease-out), transform var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-checkbox-input:checked + .aura-checkbox-indicator .aura-checkbox-icon,
+.aura-checkbox-input:indeterminate + .aura-checkbox-indicator .aura-checkbox-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.aura-checkbox-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.aura-checkbox-label {
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+  color: var(--aura-fg);
+  line-height: var(--aura-leading-snug);
+}
+
+.aura-checkbox-description {
+  font-size: var(--aura-text-xs);
+  color: var(--aura-fg-muted);
+  line-height: var(--aura-leading-normal);
+}

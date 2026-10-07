@@ -1,0 +1,11 @@
+.aura-focus-ring {
+  position: relative;
+  border-radius: inherit;
+  transition: box-shadow var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-focus-ring:focus-within,
+.aura-focus-ring--visible {
+  outline: none;
+  box-shadow: var(--aura-focus-ring);
+}

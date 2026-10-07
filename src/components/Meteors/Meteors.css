@@ -1,0 +1,83 @@
+.aura-meteors-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aura-meteor {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transform: rotate(var(--aura-meteor-angle, 215deg));
+  animation: aura-meteor-travel linear infinite;
+  opacity: 0;
+}
+
+.aura-meteor::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--aura-meteor-color, #ffffff), transparent);
+}
+
+/* Variant 1: Shower (Classic) */
+.aura-meteors--shower .aura-meteor::before {
+  width: 60px;
+}
+
+/* Variant 2: Chromatic Aurora Neon */
+.aura-meteors--aurora .aura-meteor {
+  width: 3px;
+  height: 3px;
+}
+
+.aura-meteors--aurora .aura-meteor::before {
+  width: 75px;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--aura-meteor-color, #a855f7), transparent);
+  box-shadow: 0 0 6px var(--aura-meteor-color, #a855f7);
+}
+
+/* Variant 3: Burst (Long Trails & High Energy) */
+.aura-meteors--burst .aura-meteor::before {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--aura-meteor-color, #ffffff), transparent);
+}
+
+/* Variant 4: Subtle (Gentle Quiet Luxury Floating) */
+.aura-meteors--subtle .aura-meteor {
+  opacity: 0.6;
+}
+
+.aura-meteors--subtle .aura-meteor::before {
+  width: 35px;
+  opacity: 0.5;
+}
+
+@keyframes aura-meteor-travel {
+  0% {
+    transform: rotate(var(--aura-meteor-angle, 215deg)) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--aura-meteor-angle, 215deg)) translateX(-600px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura-meteor {
+    display: none !important;
+  }
+}

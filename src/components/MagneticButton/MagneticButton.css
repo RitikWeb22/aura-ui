@@ -1,0 +1,94 @@
+.aura-magnetic-button {
+  --aura-magnetic-glow: rgba(99, 102, 241, 0.45);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  border-radius: var(--aura-radius-full);
+  border: 1px solid transparent;
+  transition: 
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    border-color var(--aura-duration-fast) var(--aura-ease-out),
+    box-shadow var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-magnetic-button--active {
+  transition: transform 0.05s linear;
+}
+
+.aura-magnetic-button:focus-visible {
+  box-shadow: var(--aura-focus-ring);
+}
+
+/* Variant 1: Default Solid Magnet */
+.aura-magnetic-button--default {
+  background-color: var(--aura-accent);
+  color: var(--aura-accent-fg);
+  box-shadow: 0 4px 14px -2px var(--aura-accent-glow);
+}
+
+.aura-magnetic-button--default:hover {
+  filter: brightness(1.08);
+}
+
+/* Variant 2: Dynamic Cursor Radial Glow Flare */
+.aura-magnetic-button--glow {
+  background-color: var(--aura-surface-raised);
+  color: var(--aura-fg);
+  border: 1px solid var(--aura-border-strong);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
+}
+
+.aura-magnetic-button__glow-flare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity var(--aura-duration-fast) var(--aura-ease-out);
+  z-index: 1;
+}
+
+/* Variant 3: High Tension Elastic Spring */
+.aura-magnetic-button--elastic {
+  background: linear-gradient(135deg, var(--aura-accent), #ec4899);
+  color: #ffffff;
+  box-shadow: 0 8px 25px -4px var(--aura-accent-glow);
+}
+
+.aura-magnetic-button--elastic:hover {
+  box-shadow: 0 12px 30px -4px var(--aura-accent-glow);
+}
+
+/* Variant 4: Ghost / Minimal Outline */
+.aura-magnetic-button--ghost {
+  background-color: transparent;
+  color: var(--aura-fg);
+  border: 1px solid var(--aura-border);
+}
+
+.aura-magnetic-button--ghost:hover {
+  background-color: var(--aura-surface-hover);
+  border-color: var(--aura-border-strong);
+}
+
+.aura-magnetic-button__content {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aura-space-2);
+  pointer-events: none;
+  transition: transform 0.1s linear;
+}

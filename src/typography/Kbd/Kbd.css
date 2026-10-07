@@ -1,0 +1,31 @@
+.aura-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--aura-font-mono);
+  font-weight: var(--aura-weight-medium);
+  color: var(--aura-fg-muted);
+  background-color: var(--aura-surface-raised);
+  border: 1px solid var(--aura-border);
+  border-bottom-width: 2px;
+  border-radius: var(--aura-radius-xs);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+  user-select: none;
+  min-width: 1.5em;
+}
+
+.aura-kbd--size-sm {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.35rem;
+}
+
+.aura-kbd--size-md {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.aura-kbd--size-lg {
+  font-size: 1rem;
+  padding: 0.35rem 0.65rem;
+}

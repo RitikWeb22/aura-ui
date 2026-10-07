@@ -1,0 +1,47 @@
+.aura-icon-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 0;
+  flex-shrink: 0;
+  transition: 
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    border-color var(--aura-duration-fast) var(--aura-ease-out),
+    color var(--aura-duration-fast) var(--aura-ease-out),
+    transform var(--aura-duration-instant) var(--aura-ease-out);
+}
+
+.aura-icon-button:active:not([disabled]) {
+  transform: scale(0.94);
+}
+
+.aura-icon-button:focus-visible {
+  box-shadow: var(--aura-focus-ring);
+}
+
+.aura-icon-button--square.aura-icon-button--xs { border-radius: var(--aura-radius-xs); }
+.aura-icon-button--square.aura-icon-button--sm { border-radius: var(--aura-radius-sm); }
+.aura-icon-button--square.aura-icon-button--md { border-radius: var(--aura-radius-sm); }
+.aura-icon-button--square.aura-icon-button--lg { border-radius: var(--aura-radius-md); }
+.aura-icon-button--square.aura-icon-button--xl { border-radius: var(--aura-radius-md); }
+
+.aura-icon-button--circle {
+  border-radius: var(--aura-radius-full) !important;
+}
+
+.aura-icon-button--xs { width: 28px; height: 28px; font-size: 14px; }
+.aura-icon-button--sm { width: 34px; height: 34px; font-size: 16px; }
+.aura-icon-button--md { width: 40px; height: 40px; font-size: 18px; }
+.aura-icon-button--lg { width: 48px; height: 48px; font-size: 20px; }
+.aura-icon-button--xl { width: 56px; height: 56px; font-size: 24px; }
+
+.aura-icon-button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

@@ -1,0 +1,33 @@
+.aura-surface {
+  position: relative;
+  transition: background-color var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-surface--elevation-base {
+  background-color: var(--aura-bg);
+}
+
+.aura-surface--elevation-raised {
+  background-color: var(--aura-surface-raised);
+  box-shadow: var(--aura-shadow-xs);
+}
+
+.aura-surface--elevation-overlay {
+  background-color: var(--aura-surface);
+  box-shadow: var(--aura-shadow-md);
+}
+
+.aura-surface--elevation-sunken {
+  background-color: var(--aura-bg-subtle);
+}
+
+.aura-surface--bordered {
+  border: 1px solid var(--aura-border);
+}
+
+.aura-surface--radius-none { border-radius: 0; }
+.aura-surface--radius-sm { border-radius: var(--aura-radius-sm); }
+.aura-surface--radius-md { border-radius: var(--aura-radius-md); }
+.aura-surface--radius-lg { border-radius: var(--aura-radius-lg); }
+.aura-surface--radius-xl { border-radius: var(--aura-radius-xl); }
+.aura-surface--radius-full { border-radius: var(--aura-radius-full); }

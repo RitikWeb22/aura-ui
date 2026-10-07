@@ -1,0 +1,96 @@
+.aura-card {
+  --aura-card-radius: var(--aura-radius-lg);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--aura-card-bg);
+  border: 1px solid var(--aura-card-border);
+  border-radius: var(--aura-card-radius);
+  overflow: hidden;
+  transition: 
+    border-color var(--aura-duration-normal) var(--aura-ease-out),
+    box-shadow var(--aura-duration-normal) var(--aura-ease-out),
+    transform var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-card--default {
+  background-color: var(--aura-surface);
+  border-color: var(--aura-border);
+  box-shadow: var(--aura-shadow-xs);
+}
+
+.aura-card--outline {
+  background-color: transparent;
+  border-color: var(--aura-border);
+}
+
+.aura-card--ghost {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.aura-card--glass {
+  background-color: var(--aura-glass-bg);
+  backdrop-filter: var(--aura-glass-blur);
+  -webkit-backdrop-filter: var(--aura-glass-blur);
+  border-color: var(--aura-glass-border);
+  box-shadow: var(--aura-shadow-sm);
+}
+
+.aura-card--interactive {
+  cursor: pointer;
+  user-select: none;
+}
+
+.aura-card--interactive:hover {
+  border-color: var(--aura-border-strong);
+  box-shadow: var(--aura-shadow-md);
+  transform: translateY(-2px);
+}
+
+.aura-card--interactive:active {
+  transform: translateY(0);
+}
+
+.aura-card--interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--aura-focus-ring);
+}
+
+.aura-card__header {
+  padding: var(--aura-space-6) var(--aura-space-6) var(--aura-space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-1);
+}
+
+.aura-card__title {
+  margin: 0;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-xl);
+  font-weight: var(--aura-weight-semibold);
+  letter-spacing: -0.02em;
+  color: var(--aura-fg);
+}
+
+.aura-card__description {
+  margin: 0;
+  font-size: var(--aura-text-sm);
+  color: var(--aura-fg-muted);
+  line-height: var(--aura-leading-normal);
+}
+
+.aura-card__body {
+  padding: var(--aura-space-4) var(--aura-space-6);
+  flex: 1 1 auto;
+  color: var(--aura-fg);
+}
+
+.aura-card__footer {
+  padding: var(--aura-space-4) var(--aura-space-6) var(--aura-space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-3);
+  margin-top: auto;
+}

@@ -1,0 +1,23 @@
+/**
+ * Aura UI Scoped Base & Reset
+ * Safe styles isolated to aura components without affecting the host app
+ */
+
+[class*="aura-"] {
+  box-sizing: border-box;
+  font-family: var(--aura-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*="aura-"] *,
+[class*="aura-"] *::before,
+[class*="aura-"] *::after {
+  box-sizing: border-box;
+}
+
+/* Base interactive focus indicator when using keyboard */
+[class*="aura-"]:focus-visible {
+  outline: none;
+  box-shadow: var(--aura-focus-ring);
+}

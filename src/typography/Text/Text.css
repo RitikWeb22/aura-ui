@@ -1,0 +1,35 @@
+.aura-text {
+  margin: 0;
+  line-height: var(--aura-leading-normal);
+  color: var(--aura-fg);
+  font-family: var(--aura-font-sans);
+}
+
+.aura-text--default { color: var(--aura-fg); }
+.aura-text--muted { color: var(--aura-fg-muted); }
+.aura-text--subtle { color: var(--aura-fg-subtle); }
+.aura-text--accent { color: var(--aura-accent); }
+.aura-text--destructive { color: var(--aura-destructive); }
+.aura-text--success { color: var(--aura-success); }
+
+.aura-text--size-xs { font-size: var(--aura-text-xs); line-height: var(--aura-leading-tight); }
+.aura-text--size-sm { font-size: var(--aura-text-sm); line-height: var(--aura-leading-snug); }
+.aura-text--size-base { font-size: var(--aura-text-base); }
+.aura-text--size-lg { font-size: var(--aura-text-lg); }
+.aura-text--size-xl { font-size: var(--aura-text-xl); }
+
+.aura-text--weight-regular { font-weight: var(--aura-weight-regular); }
+.aura-text--weight-medium { font-weight: var(--aura-weight-medium); }
+.aura-text--weight-semibold { font-weight: var(--aura-weight-semibold); }
+.aura-text--weight-bold { font-weight: var(--aura-weight-bold); }
+
+.aura-text--align-left { text-align: left; }
+.aura-text--align-center { text-align: center; }
+.aura-text--align-right { text-align: right; }
+.aura-text--align-justify { text-align: justify; }
+
+.aura-text--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

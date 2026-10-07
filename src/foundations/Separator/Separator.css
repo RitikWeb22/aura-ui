@@ -1,0 +1,17 @@
+.aura-separator {
+  flex-shrink: 0;
+  background-color: var(--aura-border);
+  transition: background-color var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-separator--horizontal {
+  height: 1px;
+  width: 100%;
+}
+
+.aura-separator--vertical {
+  width: 1px;
+  height: 100%;
+  min-height: 1rem;
+  align-self: stretch;
+}

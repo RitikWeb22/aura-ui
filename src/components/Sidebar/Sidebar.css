@@ -1,0 +1,266 @@
+.aura-sidebar {
+  --aura-sidebar-width: 260px;
+  --aura-sidebar-collapsed-width: 68px;
+  width: var(--aura-sidebar-width);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--aura-surface);
+  border-right: 1px solid var(--aura-border);
+  box-sizing: border-box;
+  transition: width var(--aura-duration-normal) var(--aura-ease-out);
+  z-index: var(--aura-z-sticky);
+}
+
+.aura-sidebar__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Collapsed State */
+.aura-sidebar--collapsed {
+  width: var(--aura-sidebar-collapsed-width);
+}
+
+/* Variant 1: Standard Modern SaaS Sidebar */
+.aura-sidebar--standard {
+  background-color: var(--aura-surface);
+  border-right: 1px solid var(--aura-border);
+}
+
+/* Variant 2: macOS / Linear Style Dock Rail */
+.aura-sidebar--dock {
+  --aura-sidebar-width: 80px;
+  width: 80px;
+  background-color: var(--aura-bg-subtle);
+  border-right: 1px solid var(--aura-border-subtle);
+  align-items: center;
+}
+
+.aura-sidebar--dock .aura-sidebar__item {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 0.25rem;
+  font-size: 0.65rem;
+  gap: 0.25rem;
+  border-radius: var(--aura-radius-md);
+}
+
+.aura-sidebar--dock .aura-sidebar__item-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Variant 3: Island Floating Glass Sidebar */
+.aura-sidebar--floating {
+  margin: 1rem;
+  min-height: calc(100vh - 2rem);
+  border-radius: var(--aura-radius-xl);
+  background-color: var(--aura-glass-bg);
+  backdrop-filter: var(--aura-glass-blur);
+  -webkit-backdrop-filter: var(--aura-glass-blur);
+  border: 1px solid var(--aura-glass-border);
+  box-shadow: var(--aura-shadow-md);
+}
+
+/* Header & Brand */
+.aura-sidebar__header {
+  padding: 1.25rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--aura-border-subtle);
+  gap: 0.5rem;
+}
+
+.aura-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--aura-fg);
+}
+
+.aura-sidebar__brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aura-sidebar__brand-text {
+  font-family: var(--aura-font-sans);
+  font-weight: var(--aura-weight-bold);
+  font-size: var(--aura-text-base);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* Navigation & Groups */
+.aura-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.85rem 0.65rem;
+  gap: 1rem;
+  flex: 1 1 auto;
+}
+
+.aura-sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.aura-sidebar__group-label {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: var(--aura-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--aura-fg-subtle);
+}
+
+.aura-sidebar__group-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Nav Item */
+.aura-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--aura-radius-sm);
+  color: var(--aura-fg-muted);
+  text-decoration: none;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: 
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    color var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-sidebar__item:hover {
+  background-color: var(--aura-surface-hover);
+  color: var(--aura-fg);
+}
+
+.aura-sidebar__item--active {
+  background-color: var(--aura-accent-subtle);
+  color: var(--aura-accent);
+  font-weight: var(--aura-weight-semibold);
+}
+
+.aura-sidebar__item--collapsed {
+  justify-content: center;
+  padding: 0.6rem;
+}
+
+.aura-sidebar__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.aura-sidebar__item-label {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aura-sidebar__item-badge {
+  display: inline-flex;
+  margin-left: auto;
+  font-size: 0.7rem;
+}
+
+.aura-sidebar__item-shortcut {
+  font-family: var(--aura-font-mono);
+  font-size: 0.65rem;
+  padding: 2px 5px;
+  background-color: var(--aura-surface-raised);
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius-xs);
+  color: var(--aura-fg-subtle);
+}
+
+/* Footer & Collapse Button */
+.aura-sidebar__footer {
+  padding: 0.85rem 0.75rem;
+  border-top: 1px solid var(--aura-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.aura-sidebar__collapse-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--aura-radius-xs);
+  background: var(--aura-surface-raised);
+  border: 1px solid var(--aura-border);
+  color: var(--aura-fg-muted);
+  cursor: pointer;
+  transition: 
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    color var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-sidebar__collapse-btn:hover {
+  background-color: var(--aura-surface-hover);
+  color: var(--aura-fg);
+}
+
+/* Mobile Drawer Mode */
+.aura-sidebar__backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .aura-sidebar__backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: var(--aura-z-modal-backdrop);
+  }
+
+  .aura-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: var(--aura-z-modal);
+    transform: translateX(-100%);
+    box-shadow: var(--aura-shadow-lg);
+  }
+
+  .aura-sidebar--mobile-open {
+    transform: translateX(0);
+  }
+}

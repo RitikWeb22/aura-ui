@@ -1,0 +1,93 @@
+.aura-tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.aura-tabs__list {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  user-select: none;
+}
+
+/* Variant: Pill */
+.aura-tabs--variant-pill .aura-tabs__list {
+  background-color: var(--aura-surface-raised);
+  padding: 3px;
+  border-radius: var(--aura-radius-md);
+  border: 1px solid var(--aura-border);
+  gap: 2px;
+}
+
+.aura-tabs--variant-pill .aura-tabs__trigger {
+  padding: 0.4rem 0.85rem;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+  color: var(--aura-fg-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--aura-radius-sm);
+  cursor: pointer;
+  outline: none;
+  transition: 
+    color var(--aura-duration-fast) var(--aura-ease-out),
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    box-shadow var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-tabs--variant-pill .aura-tabs__trigger:hover:not(:disabled) {
+  color: var(--aura-fg);
+}
+
+.aura-tabs--variant-pill .aura-tabs__trigger--selected {
+  color: var(--aura-fg);
+  background-color: var(--aura-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Variant: Line */
+.aura-tabs--variant-line .aura-tabs__list {
+  border-bottom: 1px solid var(--aura-border);
+  gap: var(--aura-space-4);
+}
+
+.aura-tabs--variant-line .aura-tabs__trigger {
+  padding: 0.6rem 0.2rem;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+  color: var(--aura-fg-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: -1px;
+  transition: color var(--aura-duration-fast) var(--aura-ease-out), border-color var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-tabs--variant-line .aura-tabs__trigger:hover:not(:disabled) {
+  color: var(--aura-fg);
+}
+
+.aura-tabs--variant-line .aura-tabs__trigger--selected {
+  color: var(--aura-accent);
+  border-bottom-color: var(--aura-accent);
+}
+
+.aura-tabs__trigger:focus-visible {
+  box-shadow: var(--aura-focus-ring);
+}
+
+.aura-tabs__trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aura-tabs__content {
+  padding-top: var(--aura-space-4);
+  outline: none;
+  animation: aura-fade-in var(--aura-duration-fast) var(--aura-ease-out);
+}

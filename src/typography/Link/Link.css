@@ -1,0 +1,66 @@
+.aura-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color var(--aura-duration-fast) var(--aura-ease-out), opacity var(--aura-duration-fast) var(--aura-ease-out);
+}
+
+.aura-link--accent {
+  color: var(--aura-accent);
+}
+
+.aura-link--accent:hover {
+  color: var(--aura-accent-hover);
+}
+
+.aura-link--default {
+  color: var(--aura-fg);
+}
+
+.aura-link--default:hover {
+  color: var(--aura-accent);
+}
+
+.aura-link--muted {
+  color: var(--aura-fg-muted);
+}
+
+.aura-link--muted:hover {
+  color: var(--aura-fg);
+}
+
+.aura-link--subtle {
+  color: var(--aura-fg-subtle);
+}
+
+.aura-link--subtle:hover {
+  color: var(--aura-fg-muted);
+}
+
+.aura-link--underline-always {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.aura-link--underline-hover {
+  text-decoration: none;
+}
+
+.aura-link--underline-hover:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.aura-link--underline-none {
+  text-decoration: none;
+}
+
+.aura-link__external-icon {
+  width: 0.85em;
+  height: 0.85em;
+  opacity: 0.7;
+  display: inline-block;
+  vertical-align: middle;
+}

@@ -1,0 +1,68 @@
+.aura-progress__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-2);
+}
+
+.aura-progress__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--aura-text-xs);
+  font-weight: var(--aura-weight-medium);
+  color: var(--aura-fg-muted);
+}
+
+.aura-progress {
+  width: 100%;
+  background-color: var(--aura-surface-raised);
+  border-radius: var(--aura-radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.aura-progress--size-xs { height: 4px; }
+.aura-progress--size-sm { height: 6px; }
+.aura-progress--size-md { height: 8px; }
+.aura-progress--size-lg { height: 12px; }
+
+.aura-progress__indicator {
+  height: 100%;
+  border-radius: inherit;
+  transition: width var(--aura-duration-normal) var(--aura-ease-out);
+}
+
+.aura-progress--color-accent .aura-progress__indicator {
+  background-color: var(--aura-accent);
+}
+
+.aura-progress--color-success .aura-progress__indicator {
+  background-color: var(--aura-success);
+}
+
+.aura-progress--color-warning .aura-progress__indicator {
+  background-color: var(--aura-warning);
+}
+
+.aura-progress--color-destructive .aura-progress__indicator {
+  background-color: var(--aura-destructive);
+}
+
+/* Indeterminate animation */
+.aura-progress--indeterminate .aura-progress__indicator {
+  width: 40%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  animation: aura-progress-indeterminate 1.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+@keyframes aura-progress-indeterminate {
+  0% {
+    left: -40%;
+  }
+  100% {
+    left: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+.aura-ripple-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 280px;
+}
+
+.aura-ripple__content {
+  position: relative;
+  z-index: 2;
+}
+
+.aura-ripple__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  pointer-events: none;
+  animation: aura-ripple-pulse 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes aura-ripple-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+}

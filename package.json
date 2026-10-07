@@ -1,0 +1,83 @@
+{
+  "name": "aura-ui-library",
+  "version": "2.3.0",
+  "description": "The zero-dependency React UI system for premium digital experiences.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./tokens": {
+      "types": "./dist/tokens/index.d.ts",
+      "import": "./dist/tokens/index.js"
+    },
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.js"
+    },
+    "./foundations": {
+      "types": "./dist/foundations/index.d.ts",
+      "import": "./dist/foundations/index.js"
+    },
+    "./typography": {
+      "types": "./dist/typography/index.d.ts",
+      "import": "./dist/typography/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./icons": {
+      "types": "./dist/icons/index.d.ts",
+      "import": "./dist/icons/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "demo-banner.svg"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "design-system",
+    "zero-runtime-dependencies",
+    "bento-grid",
+    "carousel",
+    "coverflow",
+    "spotlight",
+    "magnetic-button",
+    "accessible",
+    "dark-mode",
+    "cinematic",
+    "aura-ui"
+  ],
+  "author": "Aura UI Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0"
+  }
+}

@@ -1,0 +1,117 @@
+.aura-text-reveal {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  font-family: var(--aura-font-sans);
+  color: var(--aura-fg);
+  line-height: var(--aura-leading-tight);
+}
+
+/* Variant 1: Words Upward Slide & Fade */
+.aura-text-reveal__word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aura-word-reveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes aura-word-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Variant 2: Characters Letter-by-Letter */
+.aura-text-reveal__char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px) rotate(4deg);
+  animation: aura-char-reveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes aura-char-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) rotate(4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Variant 3: Frosted De-blur */
+.aura-text-reveal__blur-word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(0.96);
+  animation: aura-blur-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: filter, opacity, transform;
+}
+
+@keyframes aura-blur-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
+/* Variant 4: Sweeping Gradient Shine Wipe */
+.aura-text-reveal--gradient .aura-text-reveal__gradient-text {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    var(--aura-fg) 0%,
+    var(--aura-accent) 25%,
+    #ec4899 50%,
+    #00e5ff 75%,
+    var(--aura-fg) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aura-gradient-wipe 4s linear infinite;
+}
+
+@keyframes aura-gradient-wipe {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Variant 5: Lines Split */
+.aura-text-reveal__line {
+  display: block;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: aura-word-reveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura-text-reveal__word,
+  .aura-text-reveal__char,
+  .aura-text-reveal__blur-word,
+  .aura-text-reveal__line {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+}

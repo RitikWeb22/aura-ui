@@ -1,0 +1,54 @@
+.aura-heading {
+  margin: 0;
+  color: var(--aura-fg);
+  font-family: var(--aura-font-sans);
+  letter-spacing: -0.025em;
+  line-height: var(--aura-leading-tight);
+}
+
+.aura-heading--size-display {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.aura-heading--size-3xl {
+  font-size: var(--aura-text-4xl);
+  letter-spacing: -0.035em;
+}
+
+.aura-heading--size-2xl {
+  font-size: var(--aura-text-3xl);
+  letter-spacing: -0.03em;
+}
+
+.aura-heading--size-xl {
+  font-size: var(--aura-text-2xl);
+  letter-spacing: -0.025em;
+}
+
+.aura-heading--size-lg {
+  font-size: var(--aura-text-xl);
+  letter-spacing: -0.02em;
+}
+
+.aura-heading--size-md {
+  font-size: var(--aura-text-lg);
+  letter-spacing: -0.015em;
+}
+
+.aura-heading--size-sm {
+  font-size: var(--aura-text-base);
+  letter-spacing: -0.01em;
+}
+
+.aura-heading--weight-medium { font-weight: var(--aura-weight-medium); }
+.aura-heading--weight-semibold { font-weight: var(--aura-weight-semibold); }
+.aura-heading--weight-bold { font-weight: var(--aura-weight-bold); }
+
+.aura-heading--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

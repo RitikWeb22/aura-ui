@@ -1,0 +1,33 @@
+.aura-shine-border {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  background-color: var(--aura-surface);
+  box-shadow: var(--aura-shadow-md);
+}
+
+.aura-shine-border__gradient {
+  position: absolute;
+  inset: -100%;
+  animation: aura-shine-rotate 8s linear infinite;
+  pointer-events: none;
+}
+
+.aura-shine-border__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--aura-surface);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes aura-shine-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

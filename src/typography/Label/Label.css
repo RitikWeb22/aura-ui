@@ -1,0 +1,25 @@
+.aura-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aura-space-1);
+  font-family: var(--aura-font-sans);
+  font-weight: var(--aura-weight-medium);
+  color: var(--aura-fg);
+  user-select: none;
+  cursor: pointer;
+}
+
+.aura-label--size-sm { font-size: var(--aura-text-xs); }
+.aura-label--size-md { font-size: var(--aura-text-sm); }
+.aura-label--size-lg { font-size: var(--aura-text-base); }
+
+.aura-label--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aura-label__asterisk {
+  color: var(--aura-destructive);
+  font-size: 1.1em;
+  line-height: 1;
+}

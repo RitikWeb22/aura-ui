@@ -1,0 +1,30 @@
+.aura-code {
+  font-family: var(--aura-font-mono);
+  padding: 0.15em 0.38em;
+  border-radius: var(--aura-radius-xs);
+  line-height: normal;
+  white-space: break-spaces;
+  word-break: break-word;
+}
+
+.aura-code--size-xs { font-size: var(--aura-text-xs); }
+.aura-code--size-sm { font-size: 0.85em; }
+.aura-code--size-base { font-size: 0.95em; }
+
+.aura-code--variant-soft {
+  background-color: var(--aura-bg-subtle);
+  color: var(--aura-fg);
+  border: 1px solid var(--aura-border-subtle);
+}
+
+.aura-code--variant-outline {
+  background-color: transparent;
+  color: var(--aura-accent);
+  border: 1px solid var(--aura-border);
+}
+
+.aura-code--variant-solid {
+  background-color: var(--aura-surface-raised);
+  color: var(--aura-fg);
+  border: 1px solid var(--aura-border);
+}

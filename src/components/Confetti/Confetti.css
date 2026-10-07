@@ -1,0 +1,13 @@
+.aura-confetti-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.aura-confetti-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

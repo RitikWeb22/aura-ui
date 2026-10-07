@@ -1,0 +1,33 @@
+.aura-inline {
+  display: flex;
+  flex-direction: row;
+}
+
+.aura-inline--wrap { flex-wrap: wrap; }
+.aura-inline--nowrap { flex-wrap: nowrap; }
+.aura-inline--wrap-reverse { flex-wrap: wrap-reverse; }
+
+.aura-inline--align-start { align-items: flex-start; }
+.aura-inline--align-center { align-items: center; }
+.aura-inline--align-end { align-items: flex-end; }
+.aura-inline--align-stretch { align-items: stretch; }
+.aura-inline--align-baseline { align-items: baseline; }
+
+.aura-inline--justify-start { justify-content: flex-start; }
+.aura-inline--justify-center { justify-content: center; }
+.aura-inline--justify-end { justify-content: flex-end; }
+.aura-inline--justify-between { justify-content: space-between; }
+.aura-inline--justify-around { justify-content: space-around; }
+.aura-inline--justify-evenly { justify-content: space-evenly; }
+
+.aura-inline--gap-0 { gap: var(--aura-space-0); }
+.aura-inline--gap-1 { gap: var(--aura-space-1); }
+.aura-inline--gap-2 { gap: var(--aura-space-2); }
+.aura-inline--gap-3 { gap: var(--aura-space-3); }
+.aura-inline--gap-4 { gap: var(--aura-space-4); }
+.aura-inline--gap-5 { gap: var(--aura-space-5); }
+.aura-inline--gap-6 { gap: var(--aura-space-6); }
+.aura-inline--gap-8 { gap: var(--aura-space-8); }
+.aura-inline--gap-10 { gap: var(--aura-space-10); }
+.aura-inline--gap-12 { gap: var(--aura-space-12); }
+.aura-inline--gap-16 { gap: var(--aura-space-16); }

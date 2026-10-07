@@ -1,0 +1,289 @@
+/* ==========================================================================
+   Aura UI — BentoGrid Component Styles
+   Supports default, glow, glass, gradient, and interactive variants.
+   Zero external dependencies — 100% CSS Custom Properties & GPU acceleration.
+   ========================================================================== */
+
+.aura-bento-grid {
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grid Gaps */
+.aura-bento-grid--gap-sm {
+  gap: var(--aura-space-3, 12px);
+}
+.aura-bento-grid--gap-md {
+  gap: var(--aura-space-5, 20px);
+}
+.aura-bento-grid--gap-lg {
+  gap: var(--aura-space-8, 32px);
+}
+
+/* Grid Column Layouts */
+.aura-bento-grid--cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.aura-bento-grid--cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aura-bento-grid--cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .aura-bento-grid--cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .aura-bento-grid--cols-2,
+  .aura-bento-grid--cols-3,
+  .aura-bento-grid--cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Bento Card Base Styles
+   ========================================================================== */
+
+.aura-bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--aura-radius-2xl, 20px);
+  border: 1px solid var(--aura-border);
+  background-color: var(--aura-surface);
+  box-shadow: var(--aura-shadow-xs);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--aura-space-6, 24px);
+  box-sizing: border-box;
+  transition: 
+    border-color var(--aura-duration-normal, 200ms) var(--aura-ease-out, ease-out),
+    box-shadow var(--aura-duration-normal, 200ms) var(--aura-ease-out, ease-out),
+    transform var(--aura-duration-fast, 150ms) var(--aura-ease-out, ease-out),
+    background-color var(--aura-duration-normal, 200ms) ease;
+}
+
+/* Card Column and Row spans */
+.aura-bento-card--col-1 { grid-column: span 1; }
+.aura-bento-card--col-2 { grid-column: span 2; }
+.aura-bento-card--col-3 { grid-column: span 3; }
+.aura-bento-card--col-4 { grid-column: span 4; }
+
+.aura-bento-card--row-1 { grid-row: span 1; }
+.aura-bento-card--row-2 { grid-row: span 2; }
+
+@media (max-width: 768px) {
+  .aura-bento-card--col-2,
+  .aura-bento-card--col-3,
+  .aura-bento-card--col-4 {
+    grid-column: span 1 !important;
+  }
+  .aura-bento-card--row-2 {
+    grid-row: span 1 !important;
+  }
+}
+
+/* Base Hover */
+.aura-bento-card:hover {
+  border-color: var(--aura-border-strong);
+  box-shadow: var(--aura-shadow-md);
+}
+
+/* ==========================================================================
+   Variant: Glow (Cursor Spotlight)
+   ========================================================================== */
+
+.aura-bento-card--glow {
+  background-color: var(--aura-surface);
+}
+
+.aura-bento-card__glow-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--bento-glow-color, rgba(124, 58, 237, 0.18)),
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+.aura-bento-card--glow:hover .aura-bento-card__glow-layer,
+.aura-bento-card--interactive:hover .aura-bento-card__glow-layer {
+  opacity: 1;
+}
+
+.aura-bento-card--glow:hover {
+  border-color: color-mix(in srgb, var(--aura-accent) 45%, var(--aura-border));
+  box-shadow: 0 12px 30px -10px color-mix(in srgb, var(--aura-accent) 25%, transparent);
+}
+
+/* ==========================================================================
+   Variant: Glass (Frosted Glassmorphism)
+   ========================================================================== */
+
+.aura-bento-card--glass {
+  background: color-mix(in srgb, var(--aura-surface) 65%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in srgb, var(--aura-border) 60%, rgba(255, 255, 255, 0.1));
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.aura-bento-card--glass:hover {
+  background: color-mix(in srgb, var(--aura-surface) 75%, transparent);
+  border-color: color-mix(in srgb, var(--aura-accent) 40%, var(--aura-border));
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Variant: Gradient (Futuristic Sheen)
+   ========================================================================== */
+
+.aura-bento-card--gradient {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--aura-surface) 95%, var(--aura-accent) 5%) 0%,
+    color-mix(in srgb, var(--aura-surface) 90%, var(--aura-surface-raised) 10%) 100%
+  );
+  border-color: color-mix(in srgb, var(--aura-border) 80%, var(--aura-accent) 20%);
+}
+
+.aura-bento-card--gradient:hover {
+  border-color: var(--aura-accent);
+  box-shadow: 0 12px 28px -8px color-mix(in srgb, var(--aura-accent) 20%, transparent);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   Variant: Interactive (Micro-Lift & Click Feedback)
+   ========================================================================== */
+
+.aura-bento-card--interactive {
+  cursor: pointer;
+  user-select: none;
+}
+
+.aura-bento-card--interactive:hover {
+  transform: translateY(-4px) scale(1.008);
+  border-color: var(--aura-accent);
+  box-shadow: 0 18px 36px -12px color-mix(in srgb, var(--aura-accent) 30%, transparent);
+}
+
+.aura-bento-card--interactive:active {
+  transform: translateY(-1px) scale(0.995);
+  transition-duration: 80ms;
+}
+
+/* ==========================================================================
+   Internal Elements: Meta, Icon, Badge, Typography, Graphic
+   ========================================================================== */
+
+.aura-bento-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--aura-space-4, 16px);
+  position: relative;
+  z-index: 2;
+}
+
+.aura-bento-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--aura-radius-lg, 12px);
+  background-color: var(--aura-surface-raised);
+  border: 1px solid var(--aura-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--aura-accent);
+  font-size: 1.25rem;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.aura-bento-card:hover .aura-bento-card__icon {
+  transform: scale(1.08);
+  background-color: color-mix(in srgb, var(--aura-accent) 12%, var(--aura-surface-raised));
+}
+
+.aura-bento-card__badge {
+  font-size: 0.725rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--aura-radius-full, 9999px);
+  background: color-mix(in srgb, var(--aura-accent) 12%, var(--aura-surface-raised));
+  color: var(--aura-accent);
+  border: 1px solid color-mix(in srgb, var(--aura-accent) 30%, transparent);
+}
+
+.aura-bento-card__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.aura-bento-card__title {
+  margin: 0 0 var(--aura-space-2, 8px) 0;
+  font-family: var(--aura-font-sans);
+  font-size: var(--aura-text-lg, 1.125rem);
+  font-weight: var(--aura-weight-semibold, 600);
+  letter-spacing: -0.02em;
+  color: var(--aura-fg);
+  line-height: 1.3;
+}
+
+.aura-bento-card__description {
+  margin: 0;
+  font-size: var(--aura-text-sm, 0.875rem);
+  color: var(--aura-fg-muted);
+  line-height: var(--aura-leading-normal, 1.5);
+}
+
+/* Optional header slot */
+.aura-bento-card__header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: var(--aura-space-4, 16px);
+}
+
+/* Background Graphic / Illustration */
+.aura-bento-card__graphic {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.aura-bento-card:hover .aura-bento-card__graphic {
+  opacity: 0.4;
+  transform: scale(1.05);
+}
+
+/* CTA Footer */
+.aura-bento-card__cta {
+  position: relative;
+  z-index: 2;
+  margin-top: var(--aura-space-6, 24px);
+  display: flex;
+  align-items: center;
+}

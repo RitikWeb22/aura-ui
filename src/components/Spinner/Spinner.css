@@ -1,0 +1,181 @@
+/* Base SVG Ring Spinner */
+.aura-spinner {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  animation: aura-spin 0.75s cubic-bezier(0.4, 0.15, 0.2, 0.9) infinite;
+  color: var(--aura-accent);
+}
+
+.aura-spinner__track {
+  opacity: 0.15;
+}
+
+.aura-spinner__head {
+  opacity: 0.95;
+}
+
+/* Variant 2: Dots Bouncing Wave */
+.aura-spinner-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  vertical-align: middle;
+  color: var(--aura-accent);
+}
+
+.aura-spinner-dots__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: aura-dots-bounce 1.2s ease-in-out infinite;
+}
+
+.aura-spinner-dots__dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.aura-spinner-dots__dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes aura-dots-bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  40% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* Variant 3: Concentric Satellite Orbit */
+.aura-spinner-orbit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  color: var(--aura-accent);
+}
+
+.aura-spinner-orbit__ring-outer,
+.aura-spinner-orbit__ring-inner {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.aura-spinner-orbit__ring-outer {
+  inset: 0;
+  border-top-color: currentColor;
+  border-right-color: currentColor;
+  animation: aura-spin 0.9s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+}
+
+.aura-spinner-orbit__ring-inner {
+  inset: 3px;
+  border-bottom-color: currentColor;
+  border-left-color: currentColor;
+  animation: aura-spin 0.6s linear infinite reverse;
+}
+
+/* Variant 4: Concentric Radar Pulse */
+.aura-spinner-pulse {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  color: var(--aura-accent);
+}
+
+.aura-spinner-pulse__core {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.aura-spinner-pulse__ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: aura-pulse-ripple 1.2s ease-out infinite;
+}
+
+@keyframes aura-pulse-ripple {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Variant 5: Soundwave Equalizer Bars */
+.aura-spinner-bars {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  vertical-align: middle;
+  height: 20px;
+  color: var(--aura-accent);
+}
+
+.aura-spinner-bars__bar {
+  width: 3px;
+  height: 100%;
+  background-color: currentColor;
+  border-radius: 2px;
+  animation: aura-bars-wave 1s ease-in-out infinite;
+}
+
+.aura-spinner-bars__bar:nth-child(1) { animation-delay: 0.1s; }
+.aura-spinner-bars__bar:nth-child(2) { animation-delay: 0.25s; }
+.aura-spinner-bars__bar:nth-child(3) { animation-delay: 0.4s; }
+.aura-spinner-bars__bar:nth-child(4) { animation-delay: 0.55s; }
+
+@keyframes aura-bars-wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+/* Sizes */
+.aura-spinner--size-xs,
+.aura-spinner-orbit--xs,
+.aura-spinner-pulse--xs { width: 14px; height: 14px; }
+.aura-spinner--size-sm,
+.aura-spinner-orbit--sm,
+.aura-spinner-pulse--sm { width: 18px; height: 18px; }
+.aura-spinner--size-md,
+.aura-spinner-orbit--md,
+.aura-spinner-pulse--md { width: 24px; height: 24px; }
+.aura-spinner--size-lg,
+.aura-spinner-orbit--lg,
+.aura-spinner-pulse--lg { width: 32px; height: 32px; }
+.aura-spinner--size-xl,
+.aura-spinner-orbit--xl,
+.aura-spinner-pulse--xl { width: 44px; height: 44px; }
+
+.aura-spinner-dots--xs .aura-spinner-dots__dot { width: 4px; height: 4px; }
+.aura-spinner-dots--sm .aura-spinner-dots__dot { width: 5px; height: 5px; }
+.aura-spinner-dots--md .aura-spinner-dots__dot { width: 7px; height: 7px; }
+.aura-spinner-dots--lg .aura-spinner-dots__dot { width: 10px; height: 10px; }
+.aura-spinner-dots--xl .aura-spinner-dots__dot { width: 14px; height: 14px; }
+
+.aura-spinner-bars--xs { height: 12px; }
+.aura-spinner-bars--sm { height: 16px; }
+.aura-spinner-bars--md { height: 22px; }
+.aura-spinner-bars--lg { height: 30px; }
+.aura-spinner-bars--xl { height: 40px; }
+
+/* Speeds */
+.aura-spinner--speed-fast { animation-duration: 0.45s; }
+.aura-spinner--speed-normal { animation-duration: 0.75s; }
+.aura-spinner--speed-slow { animation-duration: 1.2s; }

@@ -1,0 +1,58 @@
+.aura-grid-pattern {
+  --aura-grid-size: 36px;
+  --aura-grid-stroke: rgba(255, 255, 255, 0.08);
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+  background-color: var(--aura-bg);
+  overflow: hidden;
+}
+
+[data-aura-theme="light"] .aura-grid-pattern,
+.aura-theme-light .aura-grid-pattern {
+  --aura-grid-stroke: rgba(15, 23, 42, 0.1);
+}
+
+.aura-grid-pattern__canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Variant 1: Continuous Clean Grid Lines */
+.aura-grid-pattern--lines .aura-grid-pattern__canvas {
+  background-size: var(--aura-grid-size) var(--aura-grid-size);
+  background-image: 
+    linear-gradient(to right, var(--aura-grid-stroke) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--aura-grid-stroke) 1px, transparent 1px);
+}
+
+/* Variant 2: Crosses / Plus Intersection Marks */
+.aura-grid-pattern--crosses .aura-grid-pattern__canvas {
+  background-size: var(--aura-grid-size) var(--aura-grid-size);
+  background-image:
+    linear-gradient(to right, var(--aura-grid-stroke) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--aura-grid-stroke) 1px, transparent 1px);
+  background-position: -0.5px -0.5px;
+}
+
+/* Variant 3: Dashed Technical Architectural Lines */
+.aura-grid-pattern--dashed .aura-grid-pattern__canvas {
+  background-size: var(--aura-grid-size) var(--aura-grid-size);
+  background-image: 
+    radial-gradient(var(--aura-grid-stroke) 1px, transparent 0);
+  background-position: 0 0;
+}
+
+/* Radial Vignette Mask */
+.aura-grid-pattern--radial-mask .aura-grid-pattern__canvas {
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 50%, transparent 100%);
+}
+
+.aura-grid-pattern__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}

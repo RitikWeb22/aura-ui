@@ -1,0 +1,166 @@
+.aura-button {
+  --aura-button-accent: var(--aura-accent);
+  --aura-button-radius: var(--aura-radius-md);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--aura-space-2);
+  font-family: var(--aura-font-sans);
+  font-weight: var(--aura-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  border-radius: var(--aura-button-radius);
+  border: 1px solid transparent;
+  outline: none;
+  text-decoration: none;
+  transition: 
+    background-color var(--aura-duration-fast) var(--aura-ease-out),
+    border-color var(--aura-duration-fast) var(--aura-ease-out),
+    color var(--aura-duration-fast) var(--aura-ease-out),
+    box-shadow var(--aura-duration-fast) var(--aura-ease-out),
+    transform var(--aura-duration-instant) var(--aura-ease-out);
+}
+
+.aura-button:active:not([data-disabled]) {
+  transform: scale(0.98);
+}
+
+.aura-button:focus-visible {
+  box-shadow: var(--aura-focus-ring);
+}
+
+/* Sizes */
+.aura-button--xs {
+  height: 28px;
+  padding: 0 var(--aura-space-2);
+  font-size: var(--aura-text-xs);
+  border-radius: var(--aura-radius-sm);
+  gap: var(--aura-space-1);
+}
+
+.aura-button--sm {
+  height: 34px;
+  padding: 0 var(--aura-space-3);
+  font-size: var(--aura-text-sm);
+  border-radius: var(--aura-radius-sm);
+}
+
+.aura-button--md {
+  height: 42px;
+  padding: 0 var(--aura-space-4);
+  font-size: var(--aura-text-sm);
+  border-radius: var(--aura-radius-md);
+}
+
+.aura-button--lg {
+  height: 48px;
+  padding: 0 var(--aura-space-6);
+  font-size: var(--aura-text-base);
+  border-radius: var(--aura-radius-md);
+}
+
+.aura-button--xl {
+  height: 56px;
+  padding: 0 var(--aura-space-8);
+  font-size: var(--aura-text-lg);
+  border-radius: var(--aura-radius-lg);
+}
+
+/* Variant: Solid */
+.aura-button--solid {
+  background-color: var(--aura-button-accent);
+  color: var(--aura-accent-fg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 16px -4px var(--aura-accent-glow);
+}
+
+.aura-button--solid:hover:not([data-disabled]) {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 12px -2px var(--aura-accent-glow);
+}
+
+/* Variant: Soft */
+.aura-button--soft {
+  background-color: var(--aura-accent-subtle);
+  color: var(--aura-button-accent);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.aura-button--soft:hover:not([data-disabled]) {
+  background-color: var(--aura-accent-subtle);
+  filter: brightness(1.2);
+}
+
+/* Variant: Outline */
+.aura-button--outline {
+  background-color: transparent;
+  color: var(--aura-fg);
+  border-color: var(--aura-border);
+}
+
+.aura-button--outline:hover:not([data-disabled]) {
+  background-color: var(--aura-bg-subtle);
+  border-color: var(--aura-border-strong);
+  color: var(--aura-fg);
+}
+
+/* Variant: Ghost */
+.aura-button--ghost {
+  background-color: transparent;
+  color: var(--aura-fg);
+}
+
+.aura-button--ghost:hover:not([data-disabled]) {
+  background-color: var(--aura-surface-hover);
+}
+
+/* Variant: Glass */
+.aura-button--glass {
+  background-color: var(--aura-glass-bg);
+  backdrop-filter: var(--aura-glass-blur);
+  -webkit-backdrop-filter: var(--aura-glass-blur);
+  color: var(--aura-fg);
+  border-color: var(--aura-glass-border);
+  box-shadow: var(--aura-shadow-xs);
+}
+
+.aura-button--glass:hover:not([data-disabled]) {
+  background-color: var(--aura-surface-hover);
+  border-color: var(--aura-border-strong);
+}
+
+/* Disabled & Loading States */
+.aura-button--disabled,
+.aura-button[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none !important;
+}
+
+.aura-button--loading .aura-button__content {
+  opacity: 0.8;
+}
+
+.aura-button__spinner-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aura-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.aura-button__content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aura-space-2);
+}

@@ -1,0 +1,61 @@
+.aura-grid {
+  display: grid;
+  width: 100%;
+}
+
+.aura-grid--cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.aura-grid--cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.aura-grid--cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.aura-grid--cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.aura-grid--cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.aura-grid--cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.aura-grid--cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.aura-grid--cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.aura-grid--cols-9 { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+.aura-grid--cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+.aura-grid--cols-11 { grid-template-columns: repeat(11, minmax(0, 1fr)); }
+.aura-grid--cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .aura-grid--cols-3,
+  .aura-grid--cols-4,
+  .aura-grid--cols-5,
+  .aura-grid--cols-6,
+  .aura-grid--cols-7,
+  .aura-grid--cols-8,
+  .aura-grid--cols-9,
+  .aura-grid--cols-10,
+  .aura-grid--cols-11,
+  .aura-grid--cols-12 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.aura-grid--gap-0 { gap: var(--aura-space-0); }
+.aura-grid--gap-1 { gap: var(--aura-space-1); }
+.aura-grid--gap-2 { gap: var(--aura-space-2); }
+.aura-grid--gap-3 { gap: var(--aura-space-3); }
+.aura-grid--gap-4 { gap: var(--aura-space-4); }
+.aura-grid--gap-5 { gap: var(--aura-space-5); }
+.aura-grid--gap-6 { gap: var(--aura-space-6); }
+.aura-grid--gap-8 { gap: var(--aura-space-8); }
+.aura-grid--gap-10 { gap: var(--aura-space-10); }
+.aura-grid--gap-12 { gap: var(--aura-space-12); }
+.aura-grid--gap-16 { gap: var(--aura-space-16); }
+
+.aura-grid--row-gap-0 { row-gap: var(--aura-space-0); }
+.aura-grid--row-gap-1 { row-gap: var(--aura-space-1); }
+.aura-grid--row-gap-2 { row-gap: var(--aura-space-2); }
+.aura-grid--row-gap-3 { row-gap: var(--aura-space-3); }
+.aura-grid--row-gap-4 { row-gap: var(--aura-space-4); }
+.aura-grid--row-gap-6 { row-gap: var(--aura-space-6); }
+.aura-grid--row-gap-8 { row-gap: var(--aura-space-8); }
+
+.aura-grid--col-gap-0 { column-gap: var(--aura-space-0); }
+.aura-grid--col-gap-1 { column-gap: var(--aura-space-1); }
+.aura-grid--col-gap-2 { column-gap: var(--aura-space-2); }
+.aura-grid--col-gap-3 { column-gap: var(--aura-space-3); }
+.aura-grid--col-gap-4 { column-gap: var(--aura-space-4); }
+.aura-grid--col-gap-6 { column-gap: var(--aura-space-6); }
+.aura-grid--col-gap-8 { column-gap: var(--aura-space-8); }

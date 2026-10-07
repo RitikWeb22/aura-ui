@@ -1,0 +1,39 @@
+.aura-skeleton {
+  display: block;
+  background-color: var(--aura-surface-raised);
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.aura-skeleton--text {
+  height: 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  border-radius: var(--aura-radius-xs);
+  width: 100%;
+}
+
+.aura-skeleton--circular {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.aura-skeleton--rectangular {
+  border-radius: var(--aura-radius-sm);
+  width: 100%;
+  height: 100px;
+}
+
+.aura-skeleton--animated {
+  background: linear-gradient(
+    90deg,
+    var(--aura-surface-raised) 0%,
+    var(--aura-surface-hover) 50%,
+    var(--aura-surface-raised) 100%
+  );
+  background-size: 200% 100%;
+  animation: aura-shimmer 1.8s ease-in-out infinite;
+}
