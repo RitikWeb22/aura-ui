@@ -6,16 +6,21 @@
   <strong>The zero-runtime dependency React UI system for cinematic digital experiences.</strong>
 </p>
 
-[![NPM Version](https://img.shields.io/badge/npm-v2.3.0-7c3aed?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/aura-ui-library)
+[![NPM Version](https://img.shields.io/npm/v/aura-ui-library?style=for-the-badge&logo=npm&color=7c3aed)](https://www.npmjs.com/package/aura-ui-library)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0%20runtime-10b981?style=for-the-badge)](https://www.npmjs.com/package/aura-ui-library)
 [![TypeScript](https://img.shields.io/badge/TypeScript-100%25%20Strict-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Performance](https://img.shields.io/badge/performance-120%20FPS%20GPU-f59e0b?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+[![Documentation & Live Demo](https://img.shields.io/badge/Documentation-aura--ui--lib.vercel.app-7c3aed?style=for-the-badge&logo=vercel)](https://aura-ui-lib.vercel.app/)
 
 <br />
 
-<!-- Animated SVG Demo Banner -->
-<img src="./demo-banner.svg" alt="Aura UI v2.3 Showcase Demo" width="100%" />
+<!-- Showcase Demo Preview -->
+<p align="center">
+  <a href="https://aura-ui-lib.vercel.app/" target="_blank" rel="noopener noreferrer">
+    <img src="./showcase.png" alt="Aura UI Component Library Showcase Demo" width="100%" />
+  </a>
+</p>
 
 <br />
 

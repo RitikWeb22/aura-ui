@@ -1,7 +1,7 @@
 {
   "name": "aura-ui-library",
-  "version": "2.3.0",
-  "description": "The zero-dependency React UI system for premium digital experiences.",
+  "version": "2.3.1",
+  "description": "The zero-dependency React UI component library for premium digital experiences.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -40,7 +40,7 @@
   },
   "files": [
     "dist",
-    "demo-banner.svg"
+    "showcase.png"
   ],
   "scripts": {
     "dev": "vite",
@@ -54,6 +54,8 @@
   "keywords": [
     "react",
     "ui",
+    "component-library",
+    "component library",
     "design-system",
     "zero-runtime-dependencies",
     "bento-grid",
@@ -73,7 +75,7 @@
   "bugs": {
     "url": "https://github.com/RitikWeb22/aura-ui/issues"
   },
-  "homepage": "https://github.com/RitikWeb22/aura-ui#readme",
+  "homepage": "https://aura-ui-lib.vercel.app/",
   "author": "Aura UI Team",
   "license": "MIT",
   "peerDependencies": {
